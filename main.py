@@ -16,7 +16,7 @@ difficulty_map = [
     (i, 2 * unique_lengths[len(i)]/61754 + len(i)/45) for i in db
 ]
 
-Z = sorted(difficulty_map, key=lambda x: x[1])[-3000:-1:-1]  # first 3k only
+Z = sorted(difficulty_map, key=lambda x: x[1])[-3000:-1]  # first 3k only
 
 output = {
     k: sum([similarity(k, i) for i, _ in Z])/len(Z) + v for k, v in Z
